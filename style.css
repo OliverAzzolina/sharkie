@@ -1,0 +1,431 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Luckiest Guy";
+  margin: 0;
+  height: 100vh;
+  background: url("./mobile-key-img/bubbles_bg.jpg");
+  background-size: cover;
+}
+
+body::backdrop {
+  background: url("./mobile-key-img/bubbles_bg.jpg");
+  background-size: cover;
+}
+
+canvas {
+  background-color: black;
+  display: block;
+  filter: drop-shadow(5px 10px 10px black);
+}
+
+#button-overlays {
+  position: absolute;
+  height: 480px;
+  width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#side-buttons {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-direction: column;
+  margin-right: 16px;
+  margin-top: 54px;
+}
+
+#mobile-buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+#move-buttons {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+#move-buttons img{
+height: 60px;
+width: 60px;
+}
+
+#shoot-button img{
+  height: 50px;
+  width: 50px;
+  }
+
+#top-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16px;
+}
+
+#bottom-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px;
+  margin-left: 16px;
+  margin-bottom: 16px;
+}
+
+#move-buttons button {
+  height: 50px;
+  width: 50px;
+  margin: 0;
+  border: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: unset;
+}
+
+#shoot-button button {
+  height: 60px;
+  width: 60px;
+  margin: 0;
+  border: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  background-color: unset;
+  border-radius: 50%;
+  border: 2px solid #6c6c6cba;
+}
+
+.button-image {
+  width: 40px;
+  height: 40px;
+}
+
+#shoot-button {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.side_buttons {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #6c6c6cba;
+  background-color: unset;
+  margin: 0;
+  padding: 0;
+}
+
+#turn-device-overlay{
+  display: none;
+}
+
+@media (orientation: portrait) {
+  div#turn-device-overlay{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 8px;
+  }
+  div#overlay{
+    filter: blur(4px);
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  canvas {
+    width: 100%;
+  }
+
+  div#overlay {
+    width: 100%;
+    height: 100%;
+  }
+
+  div#overlay-start {
+    width: 100%;
+  }
+
+  div#button-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  div#button-container button {
+    font-size: 24px;
+  }
+
+  div#instructions-container {
+    width: 100%;
+  }
+
+  #close-instructions {
+    font-size: 24px;
+  }
+
+  div#overlay-story {
+    width: 100%;
+  }
+
+  div#overlay-story p {
+    font-size: 20px;
+  }
+
+  button#start-game-button {
+    font-size: 24px;
+  }
+
+  #mobile-buttons {
+    display: flex;
+    width: 100%;
+  }
+
+  #button-overlays {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 260px) {
+  div#button-container button {
+    font-size: 18px;
+    width: 80%;
+    padding: 5px 10px;
+    height: 45px;
+  }
+
+  div#button-container {
+    justify-content: flex-end;
+  }
+
+  #close-instructions {
+    font-size: 18px;
+    width: 80%;
+    padding: 5px 10px;
+    height: 45px;
+    text-align: center;
+  }
+
+  div#overlay-story p {
+    font-size: 16px;
+  }
+
+  button#start-game-button {
+    font-size: 18px;
+    width: 80%;
+    padding: 5px 10px;
+    height: 45px;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  canvas {
+    height: 100vh;
+  }
+
+  div#overlay {
+    height: 100vh;
+  }
+
+  div#overlay-start {
+    height: 100vh;
+  }
+
+  div#overlay-story {
+    height: 100vh;
+  }
+
+  #button-overlays {
+    height: 100vh;
+  }
+
+  #instructions-container {
+    height: 100vh;
+  }
+
+  #instructions-img {
+    width: 60%;
+  }
+
+  div#overlay-winner {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  div#overlay-winner img {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  body {
+    height: 100vh;
+  }
+
+  div#overlay-game-over {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+div#overlay {
+  display: block;
+  height: auto;
+}
+
+#overlay-start {
+  display: block;
+  background-color: black;
+  width: 720px;
+  height: 480px;
+  background-image: url("./img/3. Background/Mesa de trabajo 1.png");
+  background-size: cover;
+  background-position: 40%;
+}
+
+#button-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+
+button {
+  font-family: "Luckiest Guy";
+  background-color: #7fffe0;
+  color: #531a82;
+  font-size: 32px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 3px solid white;
+  border-radius: 20px;
+  height: 65px;
+  margin-bottom: 40px;
+  z-index: 999;
+}
+
+#instructions-container {
+  height: 480px;
+  width: 720px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  background-image: url("./img/3. Background/Mesa de trabajo 1.png");
+  background-size: cover;
+  background-position: 40%;
+}
+
+#instructions-img {
+  width: 70%;
+}
+
+#close-instructions {
+  margin: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#overlay-game-over {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  background-color: black;
+  background-image: url("./img/3. Background/Dark/1.png");
+  background-size: cover;
+}
+
+#overlay-game-over img {
+  width: 400px;
+}
+
+#overlay-winner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  gap: 40px;
+  height: 480px;
+  width: 720px;
+  background-color: black;
+  background-image: url("./img/3. Background/Dark/1.png");
+  background-size: cover;
+}
+
+#overlay-winner img {
+  height: 480px;
+  width: 720px;
+  position: absolute;
+}
+
+#button-stats-container {
+  z-index: 99;
+}
+
+#overlay-story {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 480px;
+  width: 720px;
+  background-color: black;
+  background-image: url("./img/3. Background/Light/2.png");
+  background-size: cover;
+  background-position: 70%;
+}
+
+#overlay-story p {
+  height: 360px;
+  padding: 40px;
+  font-size: 24px;
+  color: yellow;
+  -webkit-text-stroke: 1px black;
+  text-align: justify;
+  hyphens: auto;
+  overflow: auto;
+}
+
+#fullScreen{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen{
+  width: 100vw;
+  height: 100vh;
+}
+
+.overlays{
+  height: 480px;
+    width: 720px;
+}
+

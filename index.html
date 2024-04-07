@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./mobile-key-img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>SHARKIE'S ADVENTURE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts.css" />
+    <script src="./js/templates.js"></script>
+    <script src="./models/drawable-object.class.js"></script>
+    <script src="./models/moveable-object.class.js"></script>
+    <script src="./models/status-bar.class.js"></script>
+    <script src="./models/coin-bar.class.js"></script>
+    <script src="./models/poison-bar.class.js"></script>
+    <script src="models/status-bar-boss.class.js"></script>
+    <script src="models/boss-logo.class.js"></script>
+    <script src="./models/world.class.js"></script>
+    <script src="./models/background-object.class.js"></script>
+    <script src="./models/keyboard.class.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./models/collectable-object.class.js"></script>
+    <script src="./models/throwable-object.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/fish.class.js"></script>
+    <script src="./models/greenfish.class.js"></script>
+    <script src="./models/orangefish.class.js"></script>
+    <script src="./models/redfish.class.js"></script>
+    <script src="./models/jellyfish.class.js"></script>
+    <script src="./models/jellyfish-lila.class.js"></script>
+    <script src="./models/jellyfish-yellow.class.js"></script>
+    <script src="./models/endboss.class.js"></script>
+    <script src="./models/poison.class.js"></script>
+    <script src="./models/coin.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./js/game.js"></script>
+  </head>
+
+  <body onload="init()" >
+    <h1 id="headline">Sharkie's adventure</h1>
+    <div id="fullScreen">
+      <canvas id="canvas" width="720px" height="480px" style="display: none"></canvas>
+      <div id="button-overlays" style="display: none">
+        <div id="side-buttons" style="display: none">
+          <button id="mute-button" class="side_buttons" onclick="toggleMuteSounds()">
+            <img id="mute-img" class="button-image" src="./mobile-key-img/mute_on.png"alt=""/>
+          </button>
+          <button id="fullscreen-button" class="side_buttons" onclick="fullscreen()">
+            <img class="button-image" src="./mobile-key-img/fullscreen.png" alt=""/>
+          </button>
+        </div>
+        <div id="mobile-buttons"></div>
+      </div>
+      <div id="overlay-start" class="overlays" style="display: flex;">
+        <div id="button-container">
+            <button id="start-game-button" onclick="openStory()">START GAME</button>
+            <button id="instruction-button" onclick="openInstructions()">INSTRUCTIONS</button>
+        </div>
+      </div>
+      <div id="instructions-container" class="overlays" style="display: none;">
+        <img id="instructions-img" src="./img/6.Botones/Instructions 1.png" alt="">
+        <button id="close-instructions" onclick="closeInstructions()">CLOSE</button>
+      </div>
+      <div id="overlay-story" class="overlays" style="display: none;">
+        <p>In the deep ocean, the furious orca Thorax threatened the peaceful marine world. 
+        A small but courageous shark named Sharkie took on the challenge to save the ocean.
+        Sharkie embarks on a perilous journey to collect poison that he needs to defeat Thorax more quickly. 
+        Along his way, he swims through dark caves, conquers coral reefs, and must face dangerous sea creatures . . .</p>
+        <button id="start-game-button" onclick="startGame()">Let's go!</button>
+      </div>
+      <div id="overlay-winner" class="overlays" style="display: none;">
+        <div id="button-stats-container">
+            <button id="restart-game-button" onclick="restartGame()">PLAY AGAIN</button>
+            </div>
+        <img src="./img/6.Botones/Try again/Mesa de trabajo 1.png" alt="">
+      </div>
+      <div id="overlay-game-over" class="overlays"  style="display: none;">
+        <img src="./img/6.Botones/Tittles/Game Over/Recurso 10.png" alt="">
+        <button id="restart-game-button" onclick="restartGame()">PLAY AGAIN</button>
+      </div>
+      <div id="turn-device-overlay">
+        <img src="./mobile-key-img/turn_device.png" alt="">
+        <span>turn device</span>
+      </div>
+    </div>
+  </body>
+</html>
